@@ -13,35 +13,21 @@
 
 <header class="top-bar clearfix">
   <h1>Vinni Hoke - Todo Web App</h1>
-  <p>Add all of your todos here.</p>
+  <p>A complete list of your previous todos.</p>
   <ul class="nav nav-tabs nav-justified">
-    <li role="presentation" class="active"><a href="index.html">Todos</a></li>
+    <li role="presentation"><a href="index.html">Todos</a></li>
     <li role="presentation"><a href="completed.html">Completed</a></li>
-    <li role="presentation"><a href="archived.html">Archived</a></li>
+    <li role="presentation" class="active"><a href="archived.html">Archived</a></li>
 </ul>
 </header>
 
-<div class="task-container">
-<div class="task-card">
-
-<form action="" name="orderForm"> <!-- Start Form -->
-  <input type="text" class="field">
-  <button class="btn btn-default" name="edit">/</button>
-  <button class="btn btn-default" name="archive">a</button>
-  <button class="btn btn-default" name="complete">+</button>
-  <button class="btn btn-default" name="send-task">Add to Todos</button>
-</form><!-- End Form -->
-
-</div> <!-- End Task Card -->
-</div> <!-- End Task Container -->
-
 <div id="todo-container">
   <ul class="todo-list">
-    <li class="row todos">
+    <li class="row archived">
       <div class="well well-sm col-md-7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ratione rerum fugiat, totam incidunt molestias.</div>
       <div class="col-md-3 offset-md-2"><button class="btn btn-default" name="edit">/</button>
-      <button class="btn btn-default" name="archive">a</button>
-      <button class="btn btn-default" name="send-task">Complete</button></div>
+      <button class="btn btn-default" name="delete">x</button>
+      <button class="btn btn-default" name="move-to-todos">Move to Todos</button></div>
     </li>
   </ul> <!-- End Todo-List -->
 </div> <!-- End Todo-Container -->
