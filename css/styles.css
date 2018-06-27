@@ -1,5 +1,7 @@
 /* Global CSS */
 
+
+
 a {
   text-decoration: none;
 }
@@ -9,20 +11,22 @@ li {
 }
 
 body {
-  background-color:#f3f3f3;s
+  background-color:#000;
 }
 
-form {
+
+.task-box {
  width:70%;
  display:flex;
 }
 
-form input {
+.task-box input {
   width:100%;
   display:flex;
   height:50px;
   float:left;
-  background:rgba(255,255,255,0.2);
+  background:#141E30;
+  opacity: .8;
   text-indent:15px;
   padding-right: 15px;
   color:#fff;
@@ -31,27 +35,27 @@ form input {
   outline:none;
 }
 
-form button {
+.task-box button {
   width:50px;
   height:50px;
   display:flex;
   align-items: center;
   justify-content:center;
-  background:rgba(255,255,255,0.7);
+  background:#141E30;
   border:0px;
   box-shadow:none;
   outline:none;
   cursor: pointer;
 }
 
-form button svg {
+.task-box button svg {
   width:20px;
   height:20px;
   display:flex;
 }
 
-form button svg .fill {
-  fill:#c3c3c3;
+.task-box button svg .fill {
+  fill:#fff;
 }
 
 /* Helper CSS */
@@ -70,9 +74,11 @@ form button svg .fill {
 .task-container{
   display: flex;
   justify-content: center;
-  background-color: #f3f3f3;
+  background: #141E30;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding: 50px 0px;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   box-shadow: 5px 0px 15px rgba(0,0,0,.3) inset;
 }
 
@@ -83,7 +89,7 @@ form button svg .fill {
   justify-content: center;
   align-items: center;
   padding: 30px 0px;
-  background-color: #c3c3c3;
+  background-color: #f2f2f2;
   margin: 20px 0px;
   text-align: center;
   box-shadow: 4px 7px 10px rgba(0,0,0,.3);
@@ -93,6 +99,7 @@ form button svg .fill {
   background: #f3f3f3;
   padding:15px;
   display:flex;
+  height: 100vh;
 }
 
 .field{
@@ -101,7 +108,9 @@ form button svg .fill {
 
 .top-bar{
   width: 100%;
-  background-color: #999;
+  background: #FF8008;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFC837, #FF8008);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFC837, #FF8008); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: #fff;
   text-align: center;
 }
@@ -112,6 +121,15 @@ form button svg .fill {
 
 .nav>li>a{
   background-color:#e6e6e6;
+}
+
+.todo-columns {
+  width:calc(99% / 2);
+  text-align: center;
+}
+
+.todo-columns h3 {
+  padding:20px 0;
 }
 
 ul.todo {
@@ -163,7 +181,7 @@ ul.todo li .buttons button {
   cursor: pointer;
 }
 
-ul.todo li .buttons button:last-of-type::before {
+ul.todo li .buttons button:last-of-type:before {
   content:'';
   width:1px;
   height:30px;
@@ -184,7 +202,7 @@ ul.todo#completed li .buttons button.complete svg {
 }
 
 ul.todo:not(#completed) li .buttons button.complete:hover svg {
-  fill:#c3c3c3;
+  fill:#41db63;
 }
 
 ul.todo li .buttons button svg .fill {

@@ -23,6 +23,31 @@ document.getElementById('add').addEventListener('click', function (){
   }
 });
 
+function removeItem(){
+  var item = this.parentNode.parentNode;
+  var parent = item.parentNode;
+
+  parent.removeChild(item);
+}
+
+function completeItem() {
+  var item = this.parentNode.parentNode;
+  var parent = item.parentNode;
+  var id = parent.id;
+
+  //Check if the item should be completed, or in todo.
+  var target = (id === 'todo') ? document.getElementById('completed'):document.getElementById('todo');
+
+  parent.removeChild(item);
+  target.insertBefore(item, target.childNodes[0]);
+}
+
+function editItem(){
+  var item = this.parentNode.parentNode;
+  var text = item.value;
+  console.log(text);
+}
+
 function addItemTodo(text){
 
   var list = document.getElementById('todo');
@@ -37,19 +62,29 @@ function addItemTodo(text){
   remove.classList.add('remove');
   remove.innerHTML = removeSVG;
 
+  //Add click event for removing items
+  remove.addEventListener('click', removeItem)
+
   var complete = document.createElement('button');
   complete.classList.add('complete');
   complete.innerHTML = completeSVG;
+
+  //Add click event for completing items
+  complete.addEventListener('click', completeItem)
+
 
   var edit = document.createElement('button');
   edit.classList.add('edit');
   edit.innerHTML = editSVG;
 
+  //Edit the text content of the task
+  edit.addEventListener('click', editItem)
+
   buttons.appendChild(remove);
-  buttons.appendChild(complete);
   buttons.appendChild(edit);
+  buttons.appendChild(complete);
   item.appendChild(buttons);
 
-  list.appendChild(item);
+  list.insertBefore(item, list.childNodes[0]);
 
 }

@@ -21,19 +21,19 @@
 <body>
 
 <header class="top-bar clearfix">
-  <h1>Vinni Hoke - Todo Web App</h1>
-  <p>Add all of your todos here.</p>
-  <ul class="nav nav-tabs nav-justified">
+  <h1><strong>V</strong>H</h1>
+  <p>Add all of your todos live here.</p>
+  <!-- <ul class="nav nav-tabs nav-justified">
     <li role="presentation" class="active"><a href="index.html">Todos</a></li>
     <li role="presentation"><a href="completed.html">Completed</a></li>
     <li role="presentation"><a href="archived.html">Archived</a></li>
-</ul>
+  </ul> -->
 </header>
 
 <div class="task-container">
 <div class="task-card">
 
-<form name="taskEnter"> <!-- Start Form -->
+<div class="task-box"> <!-- Start Form -->
   <input type="text" placeholder="Enter your todo here..." id="item">
   <!-- Start Time Picker -->
   <!-- <div class="container pad15" id="due">
@@ -59,22 +59,26 @@
   <button id="add">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><path class="fill" d="M13,1C8.3,1,4.4,4,2.8,8h2.2C6.4,5,9.5,3,13,3c5,0,9,4,9,9c0,5-4,9-9,9c-3.5,0-6.6-2-8-5H2.8 c1.6,4,5.6,7,10.2,7c6.1,0,11-4.9,11-11C24,5.9,19.1,1,13,1z M10.3,17.3l1.4,1.4l6.7-6.7l-6.7-6.7l-1.4,1.4l4.3,4.3H0v2h14.6 L10.3,17.3z"/> </svg>
   </button>
-</form><!-- End Form -->
+</div><!-- End Form -->
 
 </div> <!-- End Task Card -->
 </div> <!-- End Task Container -->
 
 <div class="container-fluid">
   <!-- Uncomplete Tasks -->
-  <ul class="todo" id="todo">
-
-
-  </ul>
-
+  <div class="todo-columns">
+    <h3>Current Tasks</h3>
+    <ul class="todo" id="todo">
+      <!-- List items will show up here -->
+    </ul>
+  </div>
   <!-- Completed Tasks -->
-  <ul class="todo" id="completed">
-
-  </ul>
+  <div class="todo-columns">
+    <h3>Completed</h3>
+    <ul class="todo" id="completed">
+      <!-- List items will show up here -->
+    </ul>
+  </div>
 
 </div>
 <script src="js/script.js"></script>
