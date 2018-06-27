@@ -1,3 +1,5 @@
+/* Global CSS */
+
 a {
   text-decoration: none;
 }
@@ -6,6 +8,54 @@ li {
   list-style-type: none;
 }
 
+body {
+  background-color:#f3f3f3;s
+}
+
+form {
+ width:70%;
+ display:flex;
+}
+
+form input {
+  width:100%;
+  display:flex;
+  height:50px;
+  float:left;
+  background:rgba(255,255,255,0.2);
+  text-indent:15px;
+  padding-right: 15px;
+  color:#fff;
+  border:0px;
+  box-shadow:none;
+  outline:none;
+}
+
+form button {
+  width:50px;
+  height:50px;
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  background:rgba(255,255,255,0.7);
+  border:0px;
+  box-shadow:none;
+  outline:none;
+  cursor: pointer;
+}
+
+form button svg {
+  width:20px;
+  height:20px;
+  display:flex;
+}
+
+form button svg .fill {
+  fill:#c3c3c3;
+}
+
+/* Helper CSS */
+
 .pad15 {
   padding: 15px 0;
 }
@@ -13,6 +63,9 @@ li {
 .pad30 {
   padding: 30px 0;
 }
+
+/* Start content CSS */
+
 
 .task-container{
   display: flex;
@@ -25,11 +78,21 @@ li {
 
 .task-card {
   width:80%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 30px 0px;
   background-color: #c3c3c3;
   margin: 20px 0px;
   text-align: center;
   box-shadow: 4px 7px 10px rgba(0,0,0,.3);
+}
+
+.container-fluid {
+  background: #f3f3f3;
+  padding:15px;
+  display:flex;
 }
 
 .field{
@@ -51,26 +114,92 @@ li {
   background-color:#e6e6e6;
 }
 
-.well{
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  width: 70%;
-}
-
-.todo-list{
-  display:flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-.row{
+ul.todo {
   width:100%;
+  float:left;
+}
+
+ul.todo li {
+  width:100%;
+  min-height: 50px;
+  display:flex;
+  position:relative;
+  float:left;
+  line-height: 22px;
+
+  background:#fff;
+    box-shadow: 0px 1px 2px rgba(30,30,30,.2);
+  border-radius:5px;
+  margin:0 0 10px 0;
+  padding: 14px 150px 14px 14px;
+}
+
+ul.todo li:last-of-type {
+margin:0;
+}
+
+ul.todo li .buttons {
+  width:160px;
+  height:50px;
+  position:absolute;
   display: flex;
   justify-content: center;
-
+  align-items: center;
+  top:0;
+  right:0;
 }
 
-.todo-list>li>button:first-of-type{
-  margin-left:20px;
-  display: inline-flex;
+ul.todo li .buttons button {
+  width:50px;
+  height:50px;
+  background:none;
+  display:flex;
+  justify-content: center;
+  border: 0px;
+  box-shadow:none;
+  outline:none;
+  position:relative;
+  padding:0;
+  cursor: pointer;
+}
+
+ul.todo li .buttons button:last-of-type::before {
+  content:'';
+  width:1px;
+  height:30px;
+  background:#c3c3c3;
+  position:absolute;
+  top:10px;
+  left:0;
+}
+
+ul.todo li .buttons button svg {
+  width:22px;
+  height:22px;
+  display: flex;
+}
+
+ul.todo#completed li .buttons button.complete svg {
+  fill:#41db63;
+}
+
+ul.todo:not(#completed) li .buttons button.complete:hover svg {
+  fill:#c3c3c3;
+}
+
+ul.todo li .buttons button svg .fill {
+  fill:#f3f3f3;
+  transition:fill 0.2s ease;
+}
+
+ul.todo li .buttons button.remove:hover svg .fill {
+  fill:#aa0000;
+}
+
+ul.todo li .buttons button.complete:hover svg .fill {
+  fill:#41db63;
+}
+
+ul.todo li .buttons button.edit:hover svg .fill {
+  fill:#1ea1ed;
 }

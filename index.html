@@ -9,10 +9,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <!-- Suggested Code For datetimepicker -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
-<script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
+<script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script> -->
 
 <!-- End Suggested Code for datetimepicker -->
 
@@ -33,9 +33,10 @@
 <div class="task-container">
 <div class="task-card">
 
-<form action="" name="orderForm"> <!-- Start Form -->
-  <input type="text" class="field">
-  <div class="container pad15"><!-- Start Time Picker -->
+<form name="taskEnter"> <!-- Start Form -->
+  <input type="text" placeholder="Enter your todo here..." id="item">
+  <!-- Start Time Picker -->
+  <!-- <div class="container pad15" id="due">
       <div class="row">
           <div class='col-sm-6'>
               <div class="form-group">
@@ -53,25 +54,43 @@
               });
           </script>
       </div>
-  </div> <!-- End Time Picker -->
-  <button class="btn btn-default" name="send-task">Add to Todos</button>
+  </div>  -->
+  <!-- End Time Picker -->
+  <button id="add">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><path class="fill" d="M13,1C8.3,1,4.4,4,2.8,8h2.2C6.4,5,9.5,3,13,3c5,0,9,4,9,9c0,5-4,9-9,9c-3.5,0-6.6-2-8-5H2.8 c1.6,4,5.6,7,10.2,7c6.1,0,11-4.9,11-11C24,5.9,19.1,1,13,1z M10.3,17.3l1.4,1.4l6.7-6.7l-6.7-6.7l-1.4,1.4l4.3,4.3H0v2h14.6 L10.3,17.3z"/> </svg>
+  </button>
 </form><!-- End Form -->
 
 </div> <!-- End Task Card -->
 </div> <!-- End Task Container -->
 
-<div id="todo-container">
-  <ul class="todo-list">
-    <li class="row todos">
-      <div class="well well-sm col-md-7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque ratione rerum fugiat, totam incidunt molestias.</div>
-      <div class="well well-sm col-md-1">[Date and Time]</div>
-      <div class="col-md-3 offset-md-1"><button class="btn btn-default" name="edit">/</button>
-      <button class="btn btn-default" name="archive">a</button>
-      <button class="btn btn-default" name="send-task">Complete</button></div>
-    </li>
-  </ul> <!-- End Todo-List -->
-</div> <!-- End Todo-Container -->
+<div class="container-fluid">
+  <!-- Uncomplete Tasks -->
+  <ul class="todo" id="todo">
 
-<script src="js/scripts.js"></script>
+
+  </ul>
+
+  <!-- Completed Tasks -->
+  <ul class="todo" id="completed">
+
+  </ul>
+
+</div>
+<script src="js/script.js"></script>
 </body>
 </html>
+
+<!-- <li>Lorem ipsum dolor sit amet.
+  <div class="buttons">
+    <button class="edit">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"> <path class="fill" d="M21.4,6L16,0.6l-14,14V20h5.4L21.4,6z M4,18v-2.6l12-12L18.6,6l-12,12H4z M2,22v2h20v-2H2z"/> </svg>
+    </button>
+    <button class="remove">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><path class="fill" d="M18,22H6V8H4v13.7C4,22.8,4.9,24,6,24h12c1.1,0,2-1.2,2-2.3V8h-2V22z M15,4V2H9v2H2v2h20V4H15z M9,10v10h2V10H9z M13,10v10h2V10H13z"/></svg>
+    </button>
+    <button class="complete">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"> <path class="fill" d="M1,24h2V0H1V24z M16,6V2H5v2h9v8H5v2h7v4h11V6H16z M21,16h-7v-2h2V8h5V16z"/> </svg>
+    </button>
+  </div>
+</li> -->
