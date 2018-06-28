@@ -24,7 +24,7 @@ document.getElementById('add').addEventListener('click', function (){
   event.preventDefault();
 });
 
-function removeItem(){
+function removeItem(){ 
   var item = this.parentNode.parentNode;
   var parent = item.parentNode;
 
